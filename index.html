@@ -513,9 +513,17 @@ class Component extends DCLogic {
     function closeSplash() {
         document.getElementById('custom-splash-overlay').style.display = 'none';
     }
+  // Function to check if the user clicked outside the target content card
+    function checkOutsideClick(event) {
+        var cardContent = document.getElementById('splash-card-content');
+        // If the click target is not inside the card content, close the splash
+        if (!cardContent.contains(event.target)) {
+            closeSplash();
+        }
+    }
 </script>
 <!-- Splash Page Overlay Container -->
-<div id="custom-splash-overlay">
+<div id="custom-splash-overlay" onclick="checkOutsideClick(event)">
     <div class="splash-card">
         <!-- Close Button (X) -->
         <button class="splash-close-x" onclick="closeSplash()">&times;</button>
