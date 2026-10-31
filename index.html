@@ -50,78 +50,102 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
- * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .splash-container {
-            max-width: 600px;
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-        .splash-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            color: #ffffff;
-        }
-        p {
-            font-size: 1rem;
-            color: #b3b3b3;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .btn-container {
-            display: flex;
+ #custom-splash-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85); /* Darkens the website behind it */
+        z-index: 999999; /* Forces it to stay on top of all website elements */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    .splash-card {
+        background: #1e1e1e;
+        color: #ffffff;
+        max-width: 550px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        text-align: center;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .splash-close-x {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 30px;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .splash-close-x:hover {
+        color: #fff;
+    }
+    .splash-graphic {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .splash-card h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+    .splash-card p {
+        font-size: 0.95rem;
+        color: #ccc;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+    .splash-actions {
+        display: flex;
+        gap: 12px;
+    }
+    .splash-btn {
+        flex: 1;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-sizing: border-box;
+    }
+    .splash-btn-primary {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+    }
+    .splash-btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .splash-btn-secondary {
+        background-color: transparent;
+        color: #aaa;
+        border: 1px solid #444;
+    }
+    .splash-btn-secondary:hover {
+        background-color: #2a2a2a;
+        color: #fff;
+    }
+    @media (max-width: 480px) {
+        .splash-actions {
             flex-direction: column;
-            gap: 12px;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.2s ease;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            color: #white;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: #a0a0a0;
-            border: 1px solid #444;
-        }
-        .btn-secondary:hover {
-            background-color: #2a2a2a;
-            color: #ffffff;
-        }
+    }
 
   
 html{scroll-behavior:smooth}
