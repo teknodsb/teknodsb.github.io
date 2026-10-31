@@ -509,6 +509,11 @@ class Component extends DCLogic {
     requestAnimationFrame(function () { hero.classList.add('is-visible'); });
   });
 </script>
+<script>
+    function closeSplash() {
+        document.getElementById('custom-splash-overlay').style.display = 'none';
+    }
+</script>
 <!-- Splash Page Overlay Container -->
 <div id="custom-splash-overlay">
     <div class="splash-card">
