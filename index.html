@@ -485,17 +485,23 @@ class Component extends DCLogic {
     requestAnimationFrame(function () { hero.classList.add('is-visible'); });
   });
 </script>
-<div class="splash-container">
-        <!-- Replace 'your-comic-image.png' with the actual path to your image file -->
-        <img src="assets/buatdulu.png" alt="Baiki Bug Aplikasi PHP dengan Claude Code" class="splash-image">
+<!-- Splash Page Overlay Container -->
+<div id="custom-splash-overlay">
+    <div class="splash-card">
+        <!-- Close Button (X) -->
+        <button class="splash-close-x" onclick="closeSplash()">&times;</button>
         
-        <h1>Baiki Bug Aplikasi PHP dengan Claude Code</h1>
+        <!-- Comic Image (Replace with your actual uploaded image URL) -->
+        <img src="assets/buatdulu.png" alt="Baiki Bug Aplikasi PHP dengan Claude Code" class="splash-graphic">
+        
+        <h2>Baiki Bug Aplikasi PHP dengan Claude Code</h2>
         <p>Selesaikan tiket bug dalam aplikasi PHP anda dengan yakin, menggunakan Claude Code sebagai rakan.</p>
         
-        <div class="btn-container">
-            <a href="https://buatdulu.com" class="btn btn-primary" target="_blank">Ketahui Lanjut di buatdulu.com</a>
-            <a href="/home" class="btn btn-secondary">Teruskan ke Laman Utama TEKNOD</a>
+        <div class="splash-actions">
+            <a href="https://buatdulu.com" class="splash-btn splash-btn-primary" target="_blank">Ketahui Lanjut</a>
+            <button class="splash-btn splash-btn-secondary" onclick="closeSplash()">Teruskan ke Website</button>
         </div>
+    </div>
 </div>
 </body>
 </html>
